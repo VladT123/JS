@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Functions</title>
+    </head>
+    <body>
+        <button onclick="" class="JS-button"> CLICK </button>
+        <script>
+            const buttonElement = document.querySelector('.JS-button')
+            const eventListener = () => {console.log('CLICK')}
+            buttonElement.addEventListener('click', eventListener)
+            buttonElement.removeEventListener('click', eventListener);
+            buttonElement.addEventListener('click', () => {
+                console.log('CLICK2')
+            })
+            
+            console.log(
+            [1,-2,4].map(value => value * 2));
+            // setTimeout(function() {
+            //     console.log('Time')
+            // }, 5000)
+            // [
+            //     'make dinner',
+            //     'wash dishes',
+            //     'watch youtube'
+            // ].forEach(function(value) {
+            //     console.log(value);
+            // });
+            // var greeting = () => {
+            //     console.log('hello')
+            // }
+        </script>
+        
+    </body>
+</html>  

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM projects</title>
+        <style>
+            body{
+                font-family: Arial;
+            }
+            .CSS-subscribe-button {
+                border: none;
+                background-color: #007BA7;
+                color: rgb(10, 223, 123);
+                font-weight: bold;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                border-radius: 500px;
+                cursor: pointer;
+                margin-bottom: 30px;
+            }
+            .CSS-is-subscribed{
+                background-color: black;
+                color: white;
+            }
+            .CSS-cost{
+                font-size: 15px;
+                padding: 10px;
+            }
+            .CSS-calculate {
+                background-color: green;
+                color: white;
+                border: none;
+                padding: 10px;
+                font-size: 12px 15px;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p>Youtube SUB button</p>
+        <button onclick="subscribe()"class='js-subscribe-button CSS-subscribe-button'>Subscribe</button>
+        
+        <p>Amazon shipping calculator</p>
+        
+        <input placeholder="Cost of order" class="JS-cost CSS-cost" onkeydown="if (event.key === 'Enter') {calculate()}">
+        
+        <button onclick="calculate()" class="CSS-calculate"
+        >Calculate</button>
+        
+        <p class="JS-finallCost"></p>
+        
+        <script>
+            const fCostElement = document.querySelector('.JS-finallCost')
+            function calculate()
+            {
+                const cost = Number(document.querySelector('.JS-cost').value)
+                if (cost < 40) {
+                    fCostElement.innerHTML = `${cost+10}$`
+                }
+                else { 
+                    fCostElement.innerHTML = `${cost}$`
+                }
+            }
+            function subscribe() 
+            {
+            const button_element = document.querySelector('.js-subscribe-button')
+            console.log(button_element.innerHTML)
+            if (button_element.innerHTML === 'Subscribe') 
+            {
+                button_element.innerHTML = 'Subscribed';
+                button_element.classList.add('CSS-is-subscribed')
+            }
+            else 
+            {
+                button_element.innerHTML = 'Subscribe'
+                button_element.classList.remove('CSS-is-subscribed')
+            }
+            }
+        </script>
+        
+    </body>
+</html>  
